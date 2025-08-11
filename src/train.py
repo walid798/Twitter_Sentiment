@@ -5,7 +5,9 @@ import json
 import random
 from dataclasses import dataclass
 from typing import Optional, Dict, Tuple
-
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import numpy as np
 import torch
 import torch.nn as nn
@@ -14,6 +16,7 @@ from sklearn.metrics import f1_score, accuracy_score, classification_report
 
 from transformers import AutoTokenizer, get_linear_schedule_with_warmup
 
+from src.models.bert import BertClassifier
 from src.data.datasets import TweetDataset
 from src.data.preprocess import load_vocab
 
@@ -73,7 +76,7 @@ class TrainConfig:
     save_dir: str = "experiments/runs/lstm"  # or .../bert
     label_map: Optional[Dict[str, int]] = None
 
-    
+
 
 
 # --------------------------
@@ -220,7 +223,7 @@ def fit(cfg: TrainConfig):
     # Model
     if cfg.model_type == "bert":
         print("BERT")
-        # model = BertClassifier(model_name=cfg.pretrained_name, num_classes=3)
+        model = BertClassifier(model_name=cfg.pretrained_name, num_classes=3)
     else:
         
         vocab = load_vocab(cfg.vocab_path)

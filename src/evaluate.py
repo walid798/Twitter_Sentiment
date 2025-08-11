@@ -171,8 +171,8 @@ def evaluate_checkpoint(
 
     if model_type == "bert":
         print("BERT")
-        # from src.models.bert import BertClassifier  
-        # model = BertClassifier(model_name=pretrained_name, num_classes=3)
+        from src.models.bert import BertClassifier  
+        model = BertClassifier(model_name=pretrained_name, num_classes=3)
     else:
         from src.models.lstm import LSTMClassifier
         vocab = load_vocab(vocab_path)
