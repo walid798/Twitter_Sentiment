@@ -12,7 +12,7 @@ class TweetDataset(Dataset):
         self,
         csv_path: str,
         text_col: str = "text",
-        label_col: str = "airline_sentiment",
+        label_col: str = "label",
         vocab: Optional[Dict[str, int]] = None,
         tokenizer: Optional[PreTrainedTokenizerBase] = None,
         max_len: int = 50,

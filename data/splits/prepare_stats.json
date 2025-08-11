@@ -1,0 +1,33 @@
+{
+  "seed": 42,
+  "sizes": {
+    "train": 10247,
+    "val": 2197,
+    "test": 2196
+  },
+  "class_counts": {
+    "train": {
+      "negative": 6424,
+      "neutral": 2169,
+      "positive": 1654
+    },
+    "val": {
+      "negative": 1377,
+      "neutral": 465,
+      "positive": 355
+    },
+    "test": {
+      "negative": 1377,
+      "neutral": 465,
+      "positive": 354
+    }
+  },
+  "vocab_size": 6958,
+  "paths": {
+    "train_csv": "data/splits\\airline_train.csv",
+    "val_csv": "data/splits\\airline_val.csv",
+    "test_csv": "data/splits\\airline_test.csv",
+    "vocab_json": "experiments/runs/lstm\\vocab.json",
+    "label_map_json": "experiments/runs/lstm\\label_map.json"
+  }
+}
