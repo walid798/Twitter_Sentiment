@@ -1,0 +1,18 @@
+# Core
+# torch>=2.2
+transformers>=4.41,<5
+tokenizers>=0.15
+accelerate>=0.29
+
+# Data & utils
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.4
+pyyaml>=6.0
+tqdm>=4.66
+emoji>=2.10
+
+# Visualization & app
+matplotlib>=3.8
+seaborn>=0.13
+streamlit>=1.33
